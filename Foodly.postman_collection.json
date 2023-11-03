@@ -1,0 +1,1017 @@
+{
+	"info": {
+		"_postman_id": "4ae915c1-3d5b-488d-a669-0819c8699dd1",
+		"name": "Foodly",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21899452",
+		"_collection_link": "https://www.postman.com/gold-capsule-201020/workspace/dbestech-backends/collection/21899452-4ae915c1-3d5b-488d-a669-0819c8699dd1?action=share&source=collection_link&creator=21899452"
+	},
+	"item": [
+		{
+			"name": "Restaurants",
+			"item": [
+				{
+					"name": "Add Restaurant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n          \"title\": \"Dbest Eatery\",\n          \"time\": \"20 min\",\n          \"owner\": \"6537a4448cd1bd140ebddcee\",\n          \"code\": \"Union Square\",\n          \"logoUrl\":\n            \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\",\n          \"imageUrl\":\n            \"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\",\n          \"rating\": 5,\n          \"ratingCount\": 6765,\n          \"coords\" : {\n            \"id\": 2023,\n            \"latitude\": 37.78792117665919,\n            \"longitude\": -122.41325651079953,\n            \"address\": \"698 Post St, San Francisco, CA 94109, United States\",\n            \"title\": \"Dbest Eatery\"\n          }\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6002/api/restaurant",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"restaurant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Nearby Restaurant",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6002/api/restaurant/Union Square",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"restaurant",
+								"Union Square"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restaurant Service",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:6002/api/restaurant/6537b9d9a9567f17ca3c10e5",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"restaurant",
+								"6537b9d9a9567f17ca3c10e5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Restaurant",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6002/api/restaurant/byId/6537b9d9a9567f17ca3c10e5",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"restaurant",
+								"byId",
+								"6537b9d9a9567f17ca3c10e5"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzdhNDQ0OGNkMWJkMTQwZWJkZGNlZSIsInVzZXJUeXBlIjoiVmVuZG9yIiwiZW1haWwiOiJkYkBraW5nLmNvbSIsImlhdCI6MTY5ODE1ODkyNCwiZXhwIjoxNjk5OTczMzI0fQ.lEVL3n1kdqL3EbleKnqBbDcK9XRbXfr8iG9YwFlTlNc",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Add Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"More\",\n    \"value\": \"more\",\n    \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/08323562-a3c6-461d-95a3-b3817c99871b-more.png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6002/api/category",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n     \"title\": \"Curry\",\n     \"value\": \"curry\",\n     \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/ee2d952c-1d7d-48f7-81b3-cb967343eb6c-curry.png\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6002/api/category/65310f3381e4d98d60b093c5",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"category",
+								"65310f3381e4d98d60b093c5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n     \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/93c4b3df-9e55-4308-a834-9fe4ad67c0b3-bar.png\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6002/api/category/image/65310efb81e4d98d60b093c3",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"category",
+								"image",
+								"65310efb81e4d98d60b093c3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6002/api/category",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Random Categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6002/api/category/random",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"category",
+								"random"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6002/api/category/",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"category",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Foods",
+			"item": [
+				{
+					"name": "Add Food",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Coffee\",\n    \"foodTags\": [\"Fruit\", \"Smoothie\", \"Refreshing\", \"Sweet\", \"Cold\"],\n    \"foodType\": [\"Drink\", \"Breakfast\", \"Snack\", \"Dessert\", \"Vegan\"],\n    \"code\": \"Union Square\",\n    \"isAvailable\": true,\n    \"restaurant\": \"6537b9d9a9567f17ca3c10e5\",\n    \"rating\": 4.7,\n    \"ratingCount\": \"280\",\n    \"category\": \"653120babbe4998e90af3ff1\",\n    \"description\": \"A delightful blend of tropical fruits, creating the perfect sweet and refreshing drink.\",\n    \"price\": 6.99,\n    \"additives\": [\n        { \"id\": 1, \"title\": \"Mango\", \"price\": \"2.00\" },\n        { \"id\": 2, \"title\": \"Pineapple\", \"price\": \"1.50\" },\n        { \"id\": 3, \"title\": \"Banana\", \"price\": \"1.00\" },\n        { \"id\": 4, \"title\": \"Coconut Milk\", \"price\": \"1.50\" },\n        { \"id\": 5, \"title\": \"Ice\", \"price\": \"0.50\" }\n    ],\n    \"imageUrl\": [\"https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6002/api/foods",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"foods"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Tag",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:6002/api/foods/tag/",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"foods",
+								"tag",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add FoodType",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"foodType\": \"Pasta\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6002/api/foods/type/653168e9f94c6496dc84f3bf",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"foods",
+								"type",
+								"653168e9f94c6496dc84f3bf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Food",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6002/api/foods/653168e9f94c6496dc84f3bf",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"foods",
+								"653168e9f94c6496dc84f3bf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Food By Restaurant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6002/api/foods/restaurant/60c82b2b4f5092a730a0fe0e",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"foods",
+								"restaurant",
+								"60c82b2b4f5092a730a0fe0e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Food Recommendations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6002/api/foods/recommendation/41007428",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"foods",
+								"recommendation",
+								"41007428"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Recommendations By Location",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6002/api/foods/653120babbe4998e90af3ff1/Union Square",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"foods",
+								"653120babbe4998e90af3ff1",
+								"Union Square"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Food",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:6002/api/foods/",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"foods",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Toggle Food Availability Copy",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:6002/api/foods/",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"foods",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzdhNDQ0OGNkMWJkMTQwZWJkZGNlZSIsInVzZXJUeXBlIjoiVmVuZG9yIiwiZW1haWwiOiJkYkBraW5nLmNvbSIsImlhdCI6MTY5ODE1ODkyNCwiZXhwIjoxNjk5OTczMzI0fQ.lEVL3n1kdqL3EbleKnqBbDcK9XRbXfr8iG9YwFlTlNc",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "SignUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Dbestech\",\n    \"email\": \"dbs@king.com\",\n    \"password\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6002/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"dbs@king.com\",\n    \"password\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6002/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6002/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1Mzc5ODk5OWVkMGVkZmExYjYzZjMwNiIsInVzZXJUeXBlIjoiQ2xpZW50IiwiZW1haWwiOiJkYnNAa2luZy5jb20iLCJpYXQiOjE2OTgxNDQ5NDUsImV4cCI6MTY5OTk1OTM0NX0.L3CNdK2cOJQW_ku-KNM6km1rtdwCeNlzKCAyKTDg_aE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6002/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzdhNDQ0OGNkMWJkMTQwZWJkZGNlZSIsInVzZXJUeXBlIjoiQ2xpZW50IiwiZW1haWwiOiJkYkBraW5nLmNvbSIsImlhdCI6MTY5ODE0NTM1NSwiZXhwIjoxNjk5OTU5NzU1fQ.XkmRMue7DQfa1eUWCJfH8oT1WCfhevSDXCmeApHwjA8",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Add Cart and Increment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"6537a4448cd1bd140ebddcee\",\n    \"productId\": \"65316771f94c6496dc84f3bd\",\n    \"additives\": [\"Extra Cheese\", \"Mushrooms\"],\n    \"quantity\": 2,\n    \"totalPrice\": 25.98\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6002/api/cart",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Decrement",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\": \"65316771f94c6496dc84f3bd\"\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6002/api/cart/decrement",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"cart",
+								"decrement"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Cart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:6002/api/cart/delete/6538ed67f50c8a8e346a0a5d",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"cart",
+								"delete",
+								"6538ed67f50c8a8e346a0a5d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clear Cart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:6002/api/cart/clear",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"cart",
+								"clear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch Cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6002/api/cart",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch Cart Count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6002/api/cart/count/653168e9f94c6496dc84f3bf",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"cart",
+								"count",
+								"653168e9f94c6496dc84f3bf"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzdhNDQ0OGNkMWJkMTQwZWJkZGNlZSIsInVzZXJUeXBlIjoiVmVuZG9yIiwiZW1haWwiOiJkYkBraW5nLmNvbSIsImlhdCI6MTY5ODE1ODkyNCwiZXhwIjoxNjk5OTczMzI0fQ.lEVL3n1kdqL3EbleKnqBbDcK9XRbXfr8iG9YwFlTlNc",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create Orders",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:6002/api/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTE5YWE1N2UzNzU1ZWU0NWY1MWI3MTAiLCJwaG9uZSI6IjEyMzQ1Njc4OTIiLCJmb29kVHlwZSI6WyJGb29kVHlwZSIsIkZvb2RUeXBlIl0sIm5hbWUiOiJZb3VyVmVuZG9yTmFtZSIsImlhdCI6MTY5NjE4NjkwOCwiZXhwIjoxNjk4MDAxMzA4fQ.N8Et9rygP9-izSIflGPaJs32cUHyS7FF72ejkrbyK7M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6002/api/users",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Addresses",
+			"item": [
+				{
+					"name": "Add Address",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"addressLine1\": \"150 Geary St\",\n    \"city\": \"San Francisco\",\n    \"district\": \"Union Square\",\n    \"state\": \"CA\",\n    \"postalCode\": \"94108\",\n    \"default\": true,\n    \"country\": \"USA\",\n    \"deliveryInstructions\": \"Main entrance, ask for reception.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6002/api/address",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Default Address",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6002/api/address/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6002",
+							"path": [
+								"api",
+								"address",
+								"default"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzdhNDQ0OGNkMWJkMTQwZWJkZGNlZSIsInVzZXJUeXBlIjoiVmVuZG9yIiwiZW1haWwiOiJkYkBraW5nLmNvbSIsImlhdCI6MTY5ODE1ODkyNCwiZXhwIjoxNjk5OTczMzI0fQ.lEVL3n1kdqL3EbleKnqBbDcK9XRbXfr8iG9YwFlTlNc",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
